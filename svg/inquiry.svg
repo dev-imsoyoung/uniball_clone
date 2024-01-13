@@ -1,0 +1,23 @@
+<svg version="1.1" id="inquiry_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="43.641px" height="49.641px" viewBox="0 0 43.641 49.641" enable-background="new 0 0 43.641 49.641" xml:space="preserve">
+						<g>
+							<g>
+								<g>
+									<polyline fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" points="
+										36.844,35.828 36.844,48.828 0.844,48.828 0.844,10.828 			"></polyline>
+									<polyline fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" points="
+										10.844,0.828 36.844,0.828 36.844,6.005 			"></polyline>
+									<polygon fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" points="
+										10.844,10.828 0.844,10.828 10.844,0.828 			"></polygon>
+								</g>
+							</g>
+							<g class="move1">
+								<path fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" d="M42.523,17.246
+									l-3.097-3.097c-0.428-0.428-1.122-0.428-1.549,0L21.618,30.408l-0.774,5.42l5.42-0.774l16.259-16.259
+									C42.95,18.367,42.95,17.674,42.523,17.246z"></path>
+								
+									<line fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" x1="35.702" y1="16.324" x2="40.348" y2="20.969"></line>
+							</g>
+							
+								<line fill="none" class="move2" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" stroke-miterlimit="10" x1="20.844" y1="35.828" x2="5.844" y2="35.828"></line>
+						</g>
+						</svg>

@@ -1,0 +1,85 @@
+ul,
+li {
+    list-style: none;
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    /* max-width에 맞춰서 그이상으로 못올라가게 막는고야 그리고 margin:auto를 주면 가운데로 와서
+    양옆에 공백이 유지가 되고 1400px밑으로는 크기에 따라서 퍼센트로 사이즈 조절이 되는고지 */
+    max-width: 1400px; 
+    margin: auto;
+}
+
+li {
+    /* 
+        가로에 3개 네모가 이찌?
+        가운데에 양쪽으로 마진을 주려면 33.33퍼센트에서 마진을 빼줘야행
+        가운데 영역 2,5번 왼쪽 오른쪽 마진이 각각 20이라고 봤을때 
+
+        1. 100% / 3 = 33.33%
+        2. 40 / 3 = 13.33px
+        3. width가 33.33% - 13.33px 인고지
+     */
+    width: calc(33.33% - 13.33px); 
+    height: 300px;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+li:nth-of-type(2),li:nth-of-type(5) {
+    margin: 0 20px; 
+    transform: translateY(100px);
+}
+li:nth-of-type(4),li:nth-of-type(6) {
+    margin-top: 20px;
+}
+li:nth-of-type(5) {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    div{
+        padding: 0 20px;
+    }
+
+    /* 
+    2배수인 부분만 마진 레프트가 있징
+    세로 두줄이징? 오른쪽부분에서 마진을 줄거양
+    20px마진을 준다면 두줄이니까 2로 나눈값을 빼줘야행
+    10px을 50%에서 뺴주면 되는고지
+    1. 20px / 2 = 10px 
+    2. 50% - 10px
+    */
+    li {
+        width: calc(50% - 10px);
+    }
+
+    /* 위에 작성했던 마진 값 들을 0으로 초기화하고 2배수로 마진을 넣어준고야 */
+    li:nth-of-type(2) {
+        margin: 0; 
+        margin-left: 20px; 
+        transform: translateY(100px);
+    }
+    li:nth-of-type(3) {
+        margin-top: 20px;
+    }
+    li:nth-of-type(4) {
+        margin-top: 20px; 
+        margin-left: 20px; 
+        transform: translateY(100px);
+    }
+    li:nth-of-type(5) {margin: 0; 
+        margin-top: 20px; 
+        transform: translateY(0px) translateX(-50%); 
+        position: absolute; 
+        left: 50%; 
+        top: 100%;}
+}
