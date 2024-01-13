@@ -82,70 +82,50 @@ $(document).ready(function () {
     //     })
     // });
 
-    $(function(){
+    $(function () {
         const $slideList = $('.sec4>.brand>.bg>.sub_slide>ul.images');
         const $slideItems = $('.sec4>.brand>.bg>.sub_slide>ul.images>li');
-        
+
         const $prev = $('.sec4>.brand>.bg>.sub_slide>.prev_btn');
         const $next = $('.sec4>.brand>.bg>.sub_slide>.next_btn');
-    
+
         let $slideItemLength = $slideItems.length;
         const speed = 400;
-    
-        // 맨처음 복제
-        $slideList.append($slideItems.eq(0).clone());
-        // 맨마지막 복제
-        $slideList.prepend($slideItems.eq($slideItemLength - 1).clone());
-        $slideItemLength+=2
-    
+
         // 처음시작은 복사한거 제외하고 다음것부터 시작
-        let $currentIndex = 1;
+        let $currentIndex = 0;
         // 기본 위치 설정
-        $slideList.css('transform', 'translateX(' + - 1400 / $currentIndex + 'px)');
-    
+        $slideList.css('transform', 'translateX(' + -100 / $slideItemLength + '%)');
+        // $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
+
         // 슬라이드 이동 함수
         function slideMove() {
-            $slideList.css('transform', 'translateX(' + - 1400 / $slideItemLength * $currentIndex + 'px)');
+            $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
         }
-    
-        $prev.on('click', function(){
+
+        $prev.on('click', function () {
             // 현재 인덱스가 0보다 크면
             if ($currentIndex > 0) {
                 $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
                 $currentIndex--;
                 slideMove();
-            } 
+            }
             // 현재 인덱스가 0이면
-            if($currentIndex === 0){
-                // 슬라이드한다
-                $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
-                slideMove();
-                // speed초 뒤에 실행된다
-                setTimeout(() => {
-                    $slideList.css('transition', 'none');
-                    $currentIndex = $slideItemLength - 2;
-                    $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)'); 
-                }, speed);
+            if ($currentIndex === 0) {
+                $currentIndex = $slideItemLength - 1;
             }
         });
-    
-        $next.on('click', function(){
-            // 현재 인덱스가 0보다 작으면
+
+        $next.on('click', function () {
+            // 현재 인덱스가 갯수보다 작으면
             if ($currentIndex < $slideItemLength - 1) {
                 $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
                 $currentIndex++;
                 slideMove();
-            } 
+            }
             // 현재 인덱스가 0이면
-            if($currentIndex === $slideItemLength - 1){
-                $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
-                slideMove();
-                // speed초 뒤에 실행된다
-                setTimeout(() => {
-                    $slideList.css('transition', 'none');
-                    $currentIndex = 1;
-                    $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)'); 
-                }, speed);
+            if ($currentIndex === $slideItemLength - 1) {
+                $currentIndex = 0;
             }
         });
     });

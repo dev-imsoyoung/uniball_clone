@@ -873,13 +873,11 @@ header .menu .hamburger_close .menu {
 
 .sec4 .brand .sub_slide ul.images {
     margin-top: 60px;
-    width: 8400px;
+    /* width: 8400px; */
     height: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     font-size: 0;
-    position: relative;
+    position: absolute;
 }
 
 .sec4 .brand .sub_slide ul.images li {
