@@ -873,7 +873,6 @@ header .menu .hamburger_close .menu {
 
 .sec4 .brand .sub_slide ul.images {
     margin-top: 60px;
-    /* width: 8400px; */
     height: 100%;
     display: flex;
     font-size: 0;
@@ -892,27 +891,27 @@ header .menu .hamburger_close .menu {
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(1) {
-    background: url(/images/s4/1.jpeg) no-repeat center/cover;
+    background: url(./images/s4/1.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(2) {
-    background: url(/images/s4/2.jpeg) no-repeat center/cover;
+    background: url(./images/s4/2.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(3) {
-    background: url(/images/s4/3.jpeg) no-repeat center/cover;
+    background: url(./images/s4/3.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(4) {
-    background: url(/images/s4/4.jpeg) no-repeat center/cover;
+    background: url(./images/s4/4.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(5) {
-    background: url(/images/s4/5.jpeg) no-repeat center/cover;
+    background: url(./images/s4/5.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li:nth-child(6) {
-    background: url(/images/s4/6.jpeg) no-repeat center/cover;
+    background: url(./images/s4/6.jpeg) no-repeat center/cover;
 }
 
 .sec4 .brand .sub_slide ul.images li .info {
