@@ -95,7 +95,7 @@ $(document).ready(function () {
         // 처음시작은 복사한거 제외하고 다음것부터 시작
         let $currentIndex = 0;
         // 기본 위치 설정
-        $slideList.css('transform', 'translateX(' + -100 / $slideItemLength + '%)');
+        $slideList.css('transform', 'translateX(' -100 / $slideItemLength + '%)');
         // $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
 
         // 슬라이드 이동 함수
@@ -130,6 +130,75 @@ $(document).ready(function () {
         });
     });
 
+
+
+    // var sec7_event_slide = $('.sec7>.contents>.event_wrap>.event_slide>.img_wrap>ul');
+    // var sec7_event_slide_num = 1;
+    // var sec7_event_slide_duration = 4000;
+
+    // setInterval(function () {
+
+    //     var isSlide = sec7_event_slide_num < 6;
+    //     if (isSlide) {
+    //         sec7_event_slide.animate({
+    //             left: -100 * sec7_event_slide_num + '%'
+    //         });
+    //         sec7_event_slide_num++;
+    //     } else {
+    //         sec7_event_slide.animate({
+    //             left: '0%'
+    //         });
+    //         sec7_event_slide_num = 1;
+    //     }
+    // }, sec7_event_slide_duration);
+
+    $(function () {
+        const $slideList = $('.sec7>.contents>.event_wrap>.event_slide>.img_wrap>ul');
+        const $slideItems = $('.sec7>.contents>.event_wrap>.event_slide>.img_wrap>ul>li');
+
+        const $prev = $('.sec7>.contents>.event_wrap>.event_slide>round prev_btn');
+        const $next = $('.sec7>.contents>.event_wrap>.event_slide>round next_btn');
+
+        let $slideItemLength = $slideItems.length;
+        const speed = 400;
+
+        // 처음시작은 복사한거 제외하고 다음것부터 시작
+        let $currentIndex = 0;
+        // 기본 위치 설정
+        $slideList.css('transform', 'translateX(' -100 / $slideItemLength + '%)');
+        // $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
+
+        // 슬라이드 이동 함수
+        function slideMove() {
+            $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
+        }
+
+        $prev.on('click', function () {
+            // 현재 인덱스가 0보다 크면
+            if ($currentIndex > 0) {
+                $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
+                $currentIndex--;
+                slideMove();
+            }
+            // 현재 인덱스가 0이면
+            if ($currentIndex === 0) {
+                $currentIndex = $slideItemLength - 1;
+            }
+        });
+
+        $next.on('click', function () {
+            // 현재 인덱스가 갯수보다 작으면
+            if ($currentIndex < $slideItemLength - 1) {
+                $slideList.css('transition', 'transform ' + speed + "ms ease-in-out");
+                $currentIndex++;
+                slideMove();
+            }
+            // 현재 인덱스가 0이면
+            if ($currentIndex === $slideItemLength - 1) {
+                $currentIndex = 0;
+            }
+        });
+    });
 
 });
 //ready end

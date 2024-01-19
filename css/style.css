@@ -1316,12 +1316,12 @@ header .menu .hamburger_close .menu {
 }
 
 .sec7 .contents .event_wrap .event_slide .img_wrap ul {
-    width: 2280px;
+    position: relative;
     display: flex;
 }
 
 .sec7 .contents .event_wrap .event_slide .img_wrap ul li {
-    width: 380px;
+    width: 100%;
     height: 100%;
 }
 
@@ -1355,6 +1355,7 @@ header .menu .hamburger_close .menu {
 }
 
 .sec7 .contents .event_wrap .event_slide .img_wrap ul li [class*="event_img"] {
+    width: 380px;
     height: 380px;
 }
 
