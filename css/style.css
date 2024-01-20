@@ -161,6 +161,10 @@ header .logo img {
     height: auto;
 }
 
+header .logo .color{
+    display: none;
+}
+
 header .menu {
     display: flex;
     align-items: center;
@@ -175,6 +179,13 @@ header .menu ul.sidemenu {
 header .menu ul.sidemenu li {
     font-weight: 700;
     color: #fff;
+    /* transition: 0.2s; */
+}
+
+header .menu ul.sidemenu li.open {
+    font-weight: 700;
+    color: rgba(0,0,0,8);
+    /* transition: 0.2s; */
 }
 
 header .menu ul.sidemenu .memu_line {
@@ -186,19 +197,19 @@ header .menu ul.sidemenu .memu_line {
 
 header .menu .button {}
 
-header .menu .hamburger_close {
+header .menu .hamburger {
     width: 40px;
     text-align: center;
     cursor: pointer;
 }
 
-header .menu .hamburger_close .line_group {
+header .menu .hamburger .line_group {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-header .menu .hamburger_close .line_group [class*="line_"] {
+header .menu .hamburger .line_group [class*="line_"] {
     width: 100%;
     height: 3px;
     background-color: #fff;
@@ -206,37 +217,42 @@ header .menu .hamburger_close .line_group [class*="line_"] {
     transition: width 0.2s ease;
 }
 
-header .menu .hamburger_close .line_group .line_2 {
+header .menu .hamburger .line_group [class*="line_"].open{
+    width: 100%;
+    background-color: rgba(0,0,0,8);
+}
+
+header .menu .hamburger .line_group .line_2 {
     width: 40%;
 }
 
-header .menu .hamburger_close .line_group .line_3 {
+header .menu .hamburger .line_group .line_3 {
     width: 80%;
     align-self: flex-end;
 }
 
-header .menu .hamburger_close .line_group .line_4 {
+header .menu .hamburger .line_group .line_4 {
     width: 80%;
 }
 
-header .menu .hamburger_close:hover .line_group .line_2 {
+header .menu .hamburger:hover .line_group .line_2 {
     width: 100%;
 }
 
-header .menu .hamburger_close:hover .line_group .line_3 {
+header .menu .hamburger:hover .line_group .line_3 {
     width: 100%;
 }
 
-header .menu .hamburger_close:hover .line_group .line_4 {
+header .menu .hamburger:hover .line_group .line_4 {
     width: 100%;
 }
 
 
-header .menu .hamburger_close [class*="line_"]+[class*="line_"] {
+header .menu .hamburger [class*="line_"]+[class*="line_"] {
     margin-top: 5px;
 }
 
-header .menu .hamburger_close .menu {
+header .menu .hamburger .menu {
     color: #fff;
     margin-top: 5px;
     font-size: 10px;
@@ -245,16 +261,18 @@ header .menu .hamburger_close .menu {
 
 .btn_open {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #eeeeee;
-    border: 1px solid red;
     display: none;
-    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn_open .open_menu {
     padding: 0 40px;
-    border: 1px solid orange;
+    margin-top: 120px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -330,17 +348,28 @@ header .menu .hamburger_close .menu {
     margin-bottom: 10px;
     cursor: pointer;
 }
-.btn_open .open_menu .menu2 ul.m_2 li ul.txt li:hover{
-    margin-left: 15px;
-    transition: 0.3s;
-}
-.btn_open .open_menu .menu2 ul.m_2 li ul.txt li a:hover::before{
+
+.btn_open .open_menu .menu2 ul.m_2 li ul.txt li:before{
     content: "";
-    width: 8px;
+    width: 0px;
     height: 1px;
     display: inline-block;
     background-color: #5f5f5f;
-    transition: 0.3s;
+    transition: 0.5s;
+    vertical-align: middle;
+    margin-right: 0px;
+
+}
+.btn_open .open_menu .menu2 ul.m_2 li ul.txt li:hover::before{
+    content: "";
+    width: 10px;
+    height: 1px;
+    display: inline-block;
+    background-color: #5f5f5f;
+    transition: 0.5s;
+    vertical-align: middle;
+    margin-right: 10px;
+
 }
 
 .btn_open .open_menu .menu3 {

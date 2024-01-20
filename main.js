@@ -95,7 +95,7 @@ $(document).ready(function () {
         // 처음시작은 복사한거 제외하고 다음것부터 시작
         let $currentIndex = 0;
         // 기본 위치 설정
-        $slideList.css('transform', 'translateX(' -100 / $slideItemLength + '%)');
+        $slideList.css('transform', 'translateX(' - 100 / $slideItemLength + '%)');
         // $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
 
         // 슬라이드 이동 함수
@@ -165,7 +165,7 @@ $(document).ready(function () {
         // 처음시작은 복사한거 제외하고 다음것부터 시작
         let $currentIndex = 0;
         // 기본 위치 설정
-        $slideList.css('transform', 'translateX(' -100 / $slideItemLength + '%)');
+        $slideList.css('transform', 'translateX(' - 100 / $slideItemLength + '%)');
         // $slideList.css('transform', 'translateX(' + -100 / $slideItemLength * $currentIndex + '%)');
 
         // 슬라이드 이동 함수
@@ -200,5 +200,51 @@ $(document).ready(function () {
         });
     });
 
+    const header = document.querySelector("header")
+    const openbtn = document.getElementById("hamburger")
+    const menuOpen = document.getElementById("open")
+    const logoBw = document.getElementById("bw")
+    const logoColor = document.getElementById("color")
+    const menuList = document.querySelectorAll("header .menu ul.sidemenu li")
+    const menuLine = document.getElementById("line")
+    const menuName = document.getElementById("menutxt")
+    const menuIcon = document.querySelectorAll("header .menu .hamburger ul.line_group li")
+    
+
+    let isOpen = false;
+    openbtn.addEventListener("click", () => {
+        if (isOpen) {
+            header.style.position = "absolute";
+            menuOpen.style.display = "none";
+            menuList.forEach(item => {
+                item.classList.remove("open");
+            });
+            menuOpen.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+            logoColor.style.display = "none"
+            logoBw.style.display = "flex"
+            menuLine.style.background = "#fff";
+            menuName.style.color = "#fff";
+            menuIcon.forEach(item => {
+                item.classList.remove("open")
+            });
+
+        } else {
+            header.style.position = "fixed";
+            menuOpen.style.display = "block";
+            menuList.forEach(item => {
+                item.classList.add("open");
+            });
+            menuOpen.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+            logoColor.style.display = "flex"
+            logoBw.style.display = "none"
+            menuLine.style.background = "rgba(0,0,0,8)";
+            menuName.style.color = "rgba(0,0,0,8)";
+            menuIcon.forEach(item => {
+                item.classList.add("open")
+            });
+
+        }
+        isOpen = !isOpen;
+    });
 });
 //ready end
