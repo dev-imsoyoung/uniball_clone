@@ -1175,17 +1175,14 @@ header .menu .hamburger .menu {
 
 .sec6 .notice_wrap .notice ul {
     display: flex;
+    position: relative;
     width: 2280px;
 }
 
 .sec6 .notice_wrap .notice ul li {
     width: 340px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
     margin: 0 20px;
     cursor: pointer;
-    ;
 }
 
 .sec6 .notice_wrap .notice ul li .notice_img1 {
@@ -1232,7 +1229,6 @@ header .menu .hamburger .menu {
     font-size: 24px;
     font-weight: 400;
     margin-top: 25px;
-    width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
